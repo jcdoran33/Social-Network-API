@@ -22,4 +22,20 @@ module.exports = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
   },
+
+  //add new method: PUT to update a user by its _id
+
+
+  //add new method: DELETE to remove a user by its _id
+
+  //===============================================================
+  //endpoint for two below: /api/users/:userId/friends/:friendId - will route to use this method
+  //===============================================================
+  //add new method: POST to add a new friend to a user's friend list
+
+  //add new method: DELETE to remove a friend from a user's friend list
+
 };
+
+
+

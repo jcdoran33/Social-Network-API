@@ -1,11 +1,13 @@
 const { Video, User } = require('../models');
 
 module.exports = {
+  //GET all thoughts
   getVideos(req, res) {
     Video.find()
       .then((videos) => res.json(videos))
       .catch((err) => res.status(500).json(err));
   },
+  //GET single thought by its _id
   getSingleVideo(req, res) {
     Video.findOne({ _id: req.params.videoId })
       .then((video) =>
@@ -15,7 +17,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // create a new video
+  // POST to create a new thought (don't forget to push the created thought's _id to the associated user's throughts array field)
   createVideo(req, res) {
     Video.create(req.body)
       .then((video) => {
@@ -37,6 +39,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
+  //PUT to update a thought by its _id
   updateVideo(req, res) {
     Video.findOneAndUpdate(
       { _id: req.params.videoId },
@@ -53,6 +56,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
+  //DELETE to remove a though by its _id
   deleteVideo(req, res) {
     Video.findOneAndRemove({ _id: req.params.videoId })
       .then((video) =>
@@ -73,6 +77,10 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  //====================================
+  //enpoint for two below: /api/thoughts/:thoughtId/reactions - will direct here (replace response with reactions)
+  //====================================
+  
   // Add a video response
   addVideoResponse(req, res) {
     Video.findOneAndUpdate(
