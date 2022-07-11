@@ -3,6 +3,7 @@ const {
   getUsers,
   getSingleUser,
   createUser,
+  //need to add new routes here once created
 } = require('../../controllers/userController');
 
 // /api/users
