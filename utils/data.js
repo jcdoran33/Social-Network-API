@@ -1,4 +1,4 @@
-const names = [
+const usernames = [
   'Aaran',
   'Aaren',
   'Aarez',
@@ -55,7 +55,7 @@ const names = [
   ``,
 ];
 
-const descriptionsBodies = [
+const thoughtsBodies = [
   'How to disagree with someone',
   'iPhone review',
   'how-to video',
@@ -69,7 +69,7 @@ const descriptionsBodies = [
   'Submission for startup pitch',
 ];
 
-const possibleResponses = [
+const possibleReactions = [
   'I disagree!',
   'I tried your algorithm, here were the results',
   'This was awesome',
@@ -84,9 +84,9 @@ const users = [];
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random full name
-const getRandomName = () =>
-  `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
+// Gets a random username
+const getRandomUser = () =>
+  `${getRandomArrItem(usernames)}`;
 
 // Function to generate random videos that we can add to the database. Includes video responses.
 const getRandomVideos = (int) => {
@@ -94,7 +94,7 @@ const getRandomVideos = (int) => {
   for (let i = 0; i < int; i++) {
     results.push({
       published: Math.random() < 0.5,
-      description: getRandomArrItem(descriptionsBodies),
+      thought: getRandomArrItem(thoughtsBodies),
       advertiserFriendly: Math.random() < 0.5,
       responses: [...getVideoResponses(3)],
     });
@@ -105,12 +105,12 @@ const getRandomVideos = (int) => {
 // Create the responses that will be added to each video
 const getVideoResponses = (int) => {
   if (int === 1) {
-    return getRandomArrItem(possibleResponses);
+    return getRandomArrItem(possibleReactions);
   }
   let results = [];
   for (let i = 0; i < int; i++) {
     results.push({
-      responseBody: getRandomArrItem(possibleResponses),
+      responseBody: getRandomArrItem(possibleReactions),
       username: getRandomName(),
     });
   }
@@ -118,4 +118,4 @@ const getVideoResponses = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomVideos, getRandomVideos };
+module.exports = { getRandomUser, getRandomVideos, getRandomVideos };
