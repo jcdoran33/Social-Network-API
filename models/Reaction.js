@@ -29,7 +29,7 @@ const reactionSchema = new Schema(
 );
 
 // initialize Reaction model - is this neeeded?
-const Reaction = model('reaction', reactionSchema);
+// const Reaction = model('reaction', reactionSchema);
 
 // export reaction Schema (reacently added Reaction model but not sure if needed)
-module.exports = Reaction, reactionSchema;
+module.exports =  reactionSchema;

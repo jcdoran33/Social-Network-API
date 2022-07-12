@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const Reaction = require('./Reaction');
+// const Reaction = require('./Reaction'); // commented this out
 //added new line to import reactionSchema
 const { reactionSchema } = require('./Reaction');
 
