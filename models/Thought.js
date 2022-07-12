@@ -1,27 +1,19 @@
 const { Schema, model } = require('mongoose');
-const Response = require('./Response');
+const Reaction = require('./Reaction');
 
 // Schema to create Post model
-const videoSchema = new Schema(
+const thoughtSchema = new Schema(
   {
-    published: {
-      type: Boolean,
-      default: false,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-    advertiserFriendly: {
-      type: Boolean,
-      default: true,
-    },
-    description: {
-      type: String,
-      minLength: 15,
-      maxLength: 500,
-    },
-    responses: [Response],
+    thoughtText: { type: String, required: true, minLength: 1, maxLength: 280 },
+    createdAt: { type: Date, default: Date.now },
+    username: [ //not sure if this should just be username: [User]
+      {
+        type: String,
+        required: true,
+        ref: 'User'
+      }
+    ],
+    reactions: [Reaction],
   },
   {
     toJSON: {
@@ -31,15 +23,14 @@ const videoSchema = new Schema(
   }
 );
 
-// Create a virtual property `responses` that gets the amount of response per video
-videoSchema
-  .virtual('getResponses')
-  // Getter
-  .get(function () {
-    return this.responses.length;
+// Virtual reactionCount - number of reaction to given thought
+thoughtSchema
+  .virtual('reactionCount')
+  .get(() => {
+    return this.reactions.length; //returns the length of the reactions array
   });
 
 // Initialize our Video model
-const Video = model('video', videoSchema);
+const Thought = model('Thought', thoughtSchema);
 
-module.exports = Video;
+module.exports = Thought;
