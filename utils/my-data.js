@@ -7,8 +7,22 @@ const users = [
 ];
 
 const thoughts = [
+    { thoughtText: "Today is a good day!" },
+    { thoughtText: "I'm hungry." },
+    { thoughtText: "Soccer is my favorite sport." },
+    { thoughtText: "I enjoy cooking." },
+    { thoughtText: "I love going to the movies." },
+    { thoughtText: "Exercise is my favorite." },
+    { thoughtText: "My dog ate my homework!" },
+    { thoughtText: "I can't wait for the weekend." },
+    { thoughtText: "I hope there is no rain this week." },
+    { thoughtText: "I'm tired." },
+    { thoughtText: "Can't wait to see everyone tomorrow!" },
+];
 
-]
+const reactions = [
+
+];
 
 
 
