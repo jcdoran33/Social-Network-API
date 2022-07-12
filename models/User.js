@@ -28,21 +28,15 @@ const userSchema = new Schema(
   }
 );
 
-// Create a virtual property `fullName` that gets and sets the user's full name
+// Create a virtual property friendCount that will retrieve the length og the user's friends array field (above) on query
 userSchema
-  .virtual('fullName')
-  // Getter
-  .get(function () {
-    return `${this.first} ${this.last}`;
-  })
-  // Setter to set the first and last name
-  .set(function (v) {
-    const first = v.split(' ')[0];
-    const last = v.split(' ')[1];
-    this.set({ first, last });
-  });
+  .virtual('friendCount')
+  //should this call an external function? or do it right here?
 
-// Initialize our User model
+
+  
+// Initialize the User model
 const User = model('user', userSchema);
 
+//export User
 module.exports = User;
