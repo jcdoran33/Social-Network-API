@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 const Reaction = require('./Reaction');
+//added new line to import reactionSchema
+const { reactionSchema } = require('./Reaction');
 
 // Schema to create Post model
 const thoughtSchema = new Schema(
@@ -13,7 +15,7 @@ const thoughtSchema = new Schema(
         ref: 'User'
       }
     ],
-    reactions: [Reaction],
+    reactions: [reactionSchema], //added reactionSchema here instead of Reaction
   },
   {
     toJSON: {
