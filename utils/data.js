@@ -1,121 +1,37 @@
-const usernames = [
-  'Aaran',
-  'Aaren',
-  'Aarez',
-  'Aarman',
-  'Aaron',
-  'Aaron-James',
-  'Aarron',
-  'Aaryan',
-  'Aaryn',
-  'Aayan',
-  'Aazaan',
-  'Abaan',
-  'Abbas',
-  'Abdallah',
-  'Abdalroof',
-  'Abdihakim',
-  'Abdirahman',
-  'Abdisalam',
-  'Abdul',
-  'Abdul-Aziz',
-  'Abdulbasir',
-  'Abdulkadir',
-  'Abdulkarem',
-  'Ze',
-  'Zechariah',
-  'Zeek',
-  'Zeeshan',
-  'Zeid',
-  'Zein',
-  'Zen',
-  'Zendel',
-  'Zenith',
-  'Zennon',
-  'Zeph',
-  'Zerah',
-  'Zhen',
-  'Zhi',
-  'Zhong',
-  'Zhuo',
-  'Zi',
-  'Zidane',
-  'Zijie',
-  'Zinedine',
-  'Zion',
-  'Zishan',
-  'Ziya',
-  'Ziyaan',
-  'Zohaib',
-  'Zohair',
-  'Zoubaeir',
-  'Zubair',
-  'Zubayr',
-  'Zuriel',
-  ``,
+const users = [
+    { username: "user1", email: "user1@email.com" },
+    { username: "user2", email: "user2@email.com" },
+    { username: "user3", email: "user3@email.com" },
+    { username: "user4", email: "user4@email.com" },
+    { username: "user5", email: "user5@email.com" },
 ];
 
-const thoughtsBodies = [
-  'How to disagree with someone',
-  'iPhone review',
-  'how-to video',
-  'video essay on the history of video games',
-  'How to make money on the App Store',
-  'Learn NextJS in five minutes (Not clickbate)',
-  'Movie trailer',
-  'Hello world',
-  'Another possible solution to the algorithm',
-  'Apology video',
-  'Submission for startup pitch',
+const thoughts = [
+    { thoughtText: "Today is a good day!" },
+    { thoughtText: "I'm hungry." },
+    { thoughtText: "Soccer is my favorite sport." },
+    { thoughtText: "I enjoy cooking." },
+    { thoughtText: "I love going to the movies." },
+    { thoughtText: "Exercise is my favorite." },
+    { thoughtText: "My dog ate my homework!" },
+    { thoughtText: "I can't wait for the weekend." },
+    { thoughtText: "I hope there is no rain this week." },
+    { thoughtText: "I'm tired." },
+    { thoughtText: "Can't wait to see everyone tomorrow!" },
 ];
 
-const possibleReactions = [
-  'I disagree!',
-  'I tried your algorithm, here were the results',
-  'This was awesome',
-  'Thank you for the great content',
-  'Please check out my video response',
-  'Like and subscribe to my channel please',
-  'Reply: The side effects of in app purchases on digital marketplaces',
+const reactions = [
+    { reactionBody: "I totally agree!", username: "user1" },
+    { reactionBody: "I think so, too", username: "user2" },
+    { reactionBody: "I would have to disgree here", username: "user3" },
+    { reactionBody: "That sounds terrible", username: "user4" },
+    { reactionBody: "Hope everything goes well with that!", username: "user5" },
+    { reactionBody: "This sounds great, can I join?", username: "user1" },
+    { reactionBody: "I'm not sure if I understand you'", username: "user2" },
 ];
 
-const users = [];
 
-// Get a random item given an array
-const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random username
-const getRandomUser = () =>
-  `${getRandomArrItem(usernames)}`;
 
-// Function to generate random videos that we can add to the database. Includes video responses.
-const getRandomThoughts = (int) => {
-  let results = [];
-  for (let i = 0; i < int; i++) {
-    results.push({
-      published: Math.random() < 0.5,
-      thought: getRandomArrItem(thoughtsBodies),
-      advertiserFriendly: Math.random() < 0.5,
-      responses: [...getVideoResponses(3)],
-    });
-  }
-  return results;
-};
-
-// Create the responses that will be added to each video
-const getVideoResponses = (int) => {
-  if (int === 1) {
-    return getRandomArrItem(possibleReactions);
-  }
-  let results = [];
-  for (let i = 0; i < int; i++) {
-    results.push({
-      responseBody: getRandomArrItem(possibleReactions),
-      username: getRandomName(),
-    });
-  }
-  return results;
-};
-
-// Export the functions for use in seed.js
-module.exports = { getRandomUser, getRandomVideos, getRandomThoughts };
+//export everything
+module.exports = { users, thoughts, reactions};
