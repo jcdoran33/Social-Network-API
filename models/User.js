@@ -3,15 +3,20 @@ const { Schema, model } = require('mongoose');
 // Schema to create User model
 const userSchema = new Schema(
   {
-    first: String,
-    last: String,
-    age: Number,
-    videos: [
+    username: { type: String, unique: true, required: true, trim: true },
+    email: { type: String, unqiue: true, required: true, trim: true},
+    thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Video',
+        ref: 'Thought',
       },
     ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   {
     // Mongoose supports two Schema options to transform Objects after querying MongoDb: toJSON and toObject.
