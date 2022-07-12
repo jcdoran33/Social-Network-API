@@ -89,7 +89,7 @@ const getRandomUser = () =>
   `${getRandomArrItem(usernames)}`;
 
 // Function to generate random videos that we can add to the database. Includes video responses.
-const getRandomVideos = (int) => {
+const getRandomThoughts = (int) => {
   let results = [];
   for (let i = 0; i < int; i++) {
     results.push({
@@ -118,4 +118,4 @@ const getVideoResponses = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomUser, getRandomVideos, getRandomVideos };
+module.exports = { getRandomUser, getRandomVideos, getRandomThoughts };
