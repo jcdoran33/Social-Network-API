@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 
 const reactionSchema = new Schema(
   {
@@ -28,4 +28,8 @@ const reactionSchema = new Schema(
   }
 );
 
+// initialize Reaction model - is this neeeded?
+const Reaction = model('reaction', reactionSchema);
+
+// export reaction Schema (reacently added Reaction model but not sure if needed)
 module.exports = Reaction, reactionSchema;
