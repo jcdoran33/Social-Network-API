@@ -21,7 +21,13 @@ const thoughts = [
 ];
 
 const reactions = [
-
+    { reactionBody: "I totally agree!", username: "user1" },
+    { reactionBody: "I think so, too", username: "user2" },
+    { reactionBody: "I would have to disgree here", username: "user3" },
+    { reactionBody: "That sounds terrible", username: "user4" },
+    { reactionBody: "Hope everything goes well with that!", username: "user5" },
+    { reactionBody: "This sounds great, can I join?", username: "user1" },
+    { reactionBody: "I'm not sure if I understand you'", username: "user2" },
 ];
 
 

@@ -3,7 +3,7 @@ const connection = require('../config/connection');
 //import the models
 const { User, Thought, Reaction } = require('../models');
 //import data from data.js
-const data = require('./my-data');
+const { users, thoughts, reactions } = require('./my-data');
 
 // Connect to the database
 connection.on('error', (err) => err);
@@ -17,4 +17,5 @@ connection.once('open', async () => {
 
     await User.insertMany(users);
     await Thought.insertMany(thoughts);
+    await Reaction.insertMant(reactions)
 });
