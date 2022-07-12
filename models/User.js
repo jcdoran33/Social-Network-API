@@ -31,10 +31,12 @@ const userSchema = new Schema(
 // Create a virtual property friendCount that will retrieve the length og the user's friends array field (above) on query
 userSchema
   .virtual('friendCount')
-  //should this call an external function? or do it right here?
+  .get(() => {
+    return this.friends.length //include .this?
+  });
 
 
-  
+
 // Initialize the User model
 const User = model('user', userSchema);
 
