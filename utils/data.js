@@ -1,3 +1,4 @@
+// seed data for users
 const users = [
     { username: "user1", email: "user1@email.com" },
     { username: "user2", email: "user2@email.com" },
@@ -5,7 +6,7 @@ const users = [
     { username: "user4", email: "user4@email.com" },
     { username: "user5", email: "user5@email.com" },
 ];
-
+// seed data for thoughts
 const thoughts = [
     { thoughtText: "Today is a good day!" },
     { thoughtText: "I'm hungry." },
@@ -20,6 +21,7 @@ const thoughts = [
     { thoughtText: "Can't wait to see everyone tomorrow!" },
 ];
 
+// seed data for reactions
 const reactions = [
     { reactionBody: "I totally agree!", username: "user1" },
     { reactionBody: "I think so, too", username: "user2" },

@@ -15,7 +15,8 @@ connection.once('open', async () => {
     await Thought.deleteMany({});
     await Reaction.deleteMany({}); //unsure if this is needed
 
+    // then, insert many for the collections
     await User.insertMany(users);
     await Thought.insertMany(thoughts);
-    await Reaction.insertMant(reactions)
+    await Reaction.insertMany(reactions); //unsure if this is needed
 });
