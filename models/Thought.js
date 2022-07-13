@@ -15,7 +15,13 @@ const thoughtSchema = new Schema(
         ref: 'User'
       }
     ],
-    reactions: [reactionSchema], //added reactionSchema here instead of Reaction
+    // reactions: [reactionSchema], //added reactionSchema here instead of Reaction
+    reactions: [
+      {
+        type: String,
+        ref: 'Reaction'
+      }
+    ]
   },
   {
     toJSON: {
