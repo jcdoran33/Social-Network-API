@@ -30,10 +30,10 @@ module.exports = {
       { $set: req.body }, //maybe need to change this to { $set: { username: "exmaple", email: "example"}}
       { runValidators: true, new: true }
     )
-    //then if user does not exist, throw error. If new user exists, provide as response
-    .then((user) =>
+      //then if user does not exist, throw error. If new user exists, provide as response
+      .then((user) =>
         !user
-          ? res.status(404).json({ message: 'No user with this id!' })
+          ? res.status(404).json({ message: 'No user with that ID!' })
           : res.json(user)
       )
       .catch((err) => {
@@ -42,7 +42,24 @@ module.exports = {
       });
   },
   //add new method: DELETE to remove a user by its _id
-
+  deleteUser(req, res) {
+    User.deleteOne({ _id: req.params.userId })
+      .then((user) =>
+        !user
+          ? res.status(404).json({ message: "No user with that ID!" })
+          : Thought.findOneAndUpdate(
+            { users: req.params.userId },
+            { $pull: { thoughts: req.params.thoughtId } },
+            { new: true }
+          )
+      )
+      .then((thought) =>
+        !thought
+          ? res.status(404).json({ message: "User deleted, but no thoughts with this ID" })
+          : res.json({ message: "User successfully deleted!" })
+      )
+      .catch((err) => res.status(500).json(err));
+  }
   //===============================================================
   //endpoint for two below: /api/users/:userId/friends/:friendId - will route to use this method
   //===============================================================

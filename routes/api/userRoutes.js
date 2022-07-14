@@ -5,12 +5,19 @@ const {
   createUser,
   //need to add new routes here once created
   updateUser,
+  deleteUser
 } = require('../../controllers/userController');
 
 // /api/users
-router.route('/').get(getUsers).post(createUser);
+router.route('/')
+.get(getUsers)
+.post(createUser);
+
 
 // /api/users/:userId
-router.route('/:userId').get(getSingleUser);
+router.route('/:userId')
+.get(getSingleUser)
+.put(updateUser)
+.delete(deleteUser);
 
 module.exports = router;
