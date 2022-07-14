@@ -1,9 +1,10 @@
 //import connection
 const connection = require('../config/connection');
 //import the models
-const { User, Thought, Reaction } = require('../models');
+// const { User, Thought, Reaction } = require('../models');
+const { User, Thought } = require('../models');
 //import data sets from data.js
-const { users, thoughts, reactions } = require('./data');
+const { users, thoughts } = require('./data');
 
 // Connect to the database
 connection.on('error', (err) => err);

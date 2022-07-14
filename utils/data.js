@@ -8,17 +8,17 @@ const users = [
 ];
 // seed data for thoughts
 const thoughts = [
-    { thoughtText: "Today is a good day!" },
-    { thoughtText: "I'm hungry." },
-    { thoughtText: "Soccer is my favorite sport." },
-    { thoughtText: "I enjoy cooking." },
-    { thoughtText: "I love going to the movies." },
-    { thoughtText: "Exercise is my favorite." },
-    { thoughtText: "My dog ate my homework!" },
-    { thoughtText: "I can't wait for the weekend." },
-    { thoughtText: "I hope there is no rain this week." },
-    { thoughtText: "I'm tired." },
-    { thoughtText: "Can't wait to see everyone tomorrow!" },
+    { thoughtText: "Today is a good day!", username: "user1" },
+    { thoughtText: "I'm hungry.", username: "user1" },
+    { thoughtText: "Soccer is my favorite sport.", username: "user1" },
+    { thoughtText: "I enjoy cooking.", username: "user1" },
+    // { thoughtText: "I love going to the movies." },
+    // { thoughtText: "Exercise is my favorite." },
+    // { thoughtText: "My dog ate my homework!" },
+    // { thoughtText: "I can't wait for the weekend." },
+    // { thoughtText: "I hope there is no rain this week." },
+    // { thoughtText: "I'm tired." },
+    // { thoughtText: "Can't wait to see everyone tomorrow!" },
 ];
 
 // seed data for reactions
