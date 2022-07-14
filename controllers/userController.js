@@ -24,8 +24,23 @@ module.exports = {
   },
 
   //add new method: PUT to update a user by its _id
-
-
+  updateUser(req, res) {
+    User.updateOne(
+      { _id: req.params.userId },
+      { $set: req.body }, //maybe need to change this to { $set: { username: "exmaple", email: "example"}}
+      { runValidators: true, new: true }
+    )
+    //then if user does not exist, throw error. If new user exists, provide as response
+    .then((user) =>
+        !user
+          ? res.status(404).json({ message: 'No user with this id!' })
+          : res.json(user)
+      )
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
   //add new method: DELETE to remove a user by its _id
 
   //===============================================================

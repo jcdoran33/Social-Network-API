@@ -4,6 +4,7 @@ const {
   getSingleUser,
   createUser,
   //need to add new routes here once created
+  updateUser,
 } = require('../../controllers/userController');
 
 // /api/users
