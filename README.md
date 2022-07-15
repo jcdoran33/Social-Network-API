@@ -9,7 +9,7 @@ This app uses [Node.js](https://nodejs.org/en/). [Express.js](https://expressjs.
 
 ## Link to Video Walkthrough
 
-Here is a link to a screencapture video walkthrough that demonstrates some of the functionality and routing in Insomnia: [Google Drive Video Link.]()
+Here is a link to a screencapture video walkthrough that demonstrates some of the functionality and routing in Insomnia: [Google Drive Video Link.](https://drive.google.com/file/d/1cDek-kBgLDkKrf8FEzOl95QmoEysSuWN/view?usp=sharing)
 
 ## Github Respository
 
